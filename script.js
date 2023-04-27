@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
     tokenBtn.addEventListener("click", function () {
         tbody.innerHTML = "";
 
-        let input = entrada.value.replace(/\n/g, " "); // Reemplazar los enter por espacio
+        let input = entrada.value.replace(/\n/g, " "); 
         input = separarNumerosYCadena(input);
         const tokens = input.split(" ");
 
@@ -29,34 +29,34 @@ document.addEventListener("DOMContentLoaded", function () {
             const token = tokens[i];
             let tipo, lexema;
 
-            if (token.match(/^[a-zA-Z_]\w*$/)) { // Identificador
+            if (token.match(/^[a-zA-Z_]\w*$/)) { 
                 tipo = "Identificador";
                 lexema = token;
-            } else if (token === "=") { // Igual
+            } else if (token === "=") { 
                 tipo = "Igual";
                 lexema = token;
-            } else if (token === "+") { // Suma
+            } else if (token === "+") {
                 tipo = "Más";
                 lexema = token;
-            } else if (token === "-") { // Resta
+            } else if (token === "-") { 
                 tipo = "Menos";
                 lexema = token;
-            } else if (token === "*") { // Multiplicación
+            } else if (token === "*") { 
                 tipo = "Multiplicación";
                 lexema = token;
-            } else if (token === "/") { // División
+            } else if (token === "/") { 
                 tipo = "División";
                 lexema = token;
-            } else if (token === ";") { // Punto y coma
+            } else if (token === ";") { 
                 tipo = "Punto y coma";
                 lexema = token;
-            } else if (token === ".") { // Punto
+            } else if (token === ".") {
                 tipo = "Punto";
                 lexema = token;
-            } else if (token.match(/^\d+(\.\d+)?;$/)) { // Número seguido de punto y coma
+            } else if (token.match(/^\d+(\.\d+)?;$/)) { 
                 tipo = "Número";
                 lexema = token.replace(";", "");
-            } else if (token.match(/^\d+(\.\d+)?$/)) { // Número
+            } else if (token.match(/^\d+(\.\d+)?$/)) { 
                 tipo = "Número";
                 lexema = token;
             } else { // Error
@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
         starIcon.classList.add("rotate-once");
         setTimeout(() => {
             starIcon.classList.remove("rotate-once");
-        }, 1000); // la animación tarda 1 segundo, así que espera ese tiempo antes de eliminar la clase
+        }, 1000); 
 
     });
 

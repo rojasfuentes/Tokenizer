@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<title>Tokenizador</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="entrada container_single">
+            <div class="entrada_title title">
+                Entrada
+            </div>
+            <textarea type="text" class="entrada_input" placeholder="Ingresa el código.."></textarea>
+            <div class="buttons">
+                <button class="buttons_token button">Tokenizar</button>
+                <button class="buttons_clear button">Limpiar</button>
+            </div>
+        </div>
+        <div class="star">
+            <i id="star-icon" class="fa fa-star"></i>
+        </div>
+        <div class="salida container_single">
+            <div class="salida_title title">
+                Salida
+            </div>
+            <div class="salida_output">
+                <table id="customers">
+                    <tr>
+                        <th>Token</th>
+                        <th>Lexema</th>
+                    </tr>
+                </table>
+            </div>
+            <div class="buttons salida_buttons">
+                <button class="buttons_text button">Texto Aleatorio</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>

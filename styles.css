@@ -108,8 +108,18 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
+i:hover {
+    color: #ffff00;
+    cursor: pointer;
+    transform: scale(1.5);
+}
+i:active {
+    transform: scale(1.9);
+    color: #ffffff;
+}
 .salida {
     background-color: var(--color-DairyCream);
 }
@@ -161,8 +171,7 @@ body {
     font-size: 1.2vw;
 }
 
-.buttons_text {
-    width: 100%;
+.buttons_text, .buttons_clear {
     background-color: var(--color-atomicTangerine);
     color: white;
 }

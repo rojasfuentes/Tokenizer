@@ -11,7 +11,7 @@
 <title>Tokenizador</title>
 </head>
 
-<body>
+<body>  
     <div class="container">
         <div class="entrada container_single">
             <div class="entrada_title title">
@@ -19,12 +19,13 @@
             </div>
             <textarea type="text" class="entrada_input" placeholder="Ingresa el código.."></textarea>
             <div class="buttons">
-                <button class="buttons_token button">Tokenizar</button>
-                <button class="buttons_clear button">Limpiar</button>
+                <button class="buttons_token button">Analisis Lexico</button>
+                <button class="buttons_sint button">Analisis Sintactico</button>
             </div>
         </div>
         <div class="star">
             <i id="star-icon" class="fa fa-star"></i>
+            <small>PDF</small>
         </div>
         <div class="salida container_single">
             <div class="salida_title title">
@@ -38,13 +39,15 @@
                     </tr>
                 </table>
             </div>
-            <div class="buttons salida_buttons">
+            <div class="buttons buttons2 salida_buttons">
                 <button class="buttons_text button">Texto Aleatorio</button>
+                <button class="buttons_clear button">Limpiar</button>
             </div>
         </div>
     </div>
 
     <script src="./script.js"></script>
+    <script src="./script2.js"></script>
 </body>
 
 </html>

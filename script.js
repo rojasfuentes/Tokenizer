@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+  document.addEventListener("DOMContentLoaded", function () {
     const tokenBtn = document.querySelector(".buttons_token");
     const clearBtn = document.querySelector(".buttons_clear");
     const textBtn = document.querySelector(".buttons_text");
@@ -6,12 +6,15 @@ document.addEventListener("DOMContentLoaded", function () {
     const salida = document.querySelector(".salida_output table");
     const tbody = document.createElement("tbody");
 
+    
     function separarNumerosYCadena(input) {
         const regex = /(\d+(\.\d+)?|[a-zA-Z]+);/g;
-        const regexdot = /(\d+(\.\d+)?|[a-zA-Z]+),/g;
+        const regexdot = /(\d+(\.\d+)?|[a-zA-Z]+),/g; 
 
         const matches = input.match(regex);
         const dotmatches = input.match(regexdot);
+
+
         let output = input;
         if (matches !== null) {
             for (const match of matches) {
@@ -23,12 +26,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             }
         }
-
+        
         output = output.replace(/"([^"]*)"/g, function (match, p1) {
             const words = p1.split(" ");
             const replacedWords = words.map(function (word) {
                 return "~~" + word + "~~";
             });
+            
             return replacedWords.join(" ");
         });
 
@@ -45,8 +49,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     tokenBtn.addEventListener("click", function () {
+        
         tbody.innerHTML = "";
-
+        
         let input = entrada.value.replace(/[\n\t]/g, " ");
         // borrar espacios en blanco
         input = input.replace(/\s+/g, " ");
@@ -300,7 +305,7 @@ document.addEventListener("DOMContentLoaded", function () {
             '#include <iostream>' + '\n'+ 'using namespace std;' + '\n' + 'int main() {' + '\n' + '\t ' + 'for (int i = 0; i < 5; i++) {' + '\n' + '\t' + '\t ' + 'cout << "Iteración " << i + 1 << endl;' + '\n' + '\t ' + '}'+ '\n' + '\t ' + 'return 0;' + '\n' + '}',
             '#include <iostream>' + '\n' + 'using namespace std;' + '\n' + 'int main() {' + '\n' + '\t ' + 'int extNum, sumDigit = 0, numEntero;' + '\n' + '\t ' + 'cout << "Ingrese un numero entero:";' + '\n' + '\t ' + 'cin >> numEntero;' + '\n' + '\t ' + 'while (numEntero != 0) {' + '\n' + '\t' + '\t ' + 'extNum = numEntero % 10;' + '\n' + '\t \t ' + 'numEntero /= 10;' + '\n' + '\t' + '\t ' + 'sumDigit += extNum;' + '\n' + '\t ' + '}' + '\n' + '\t ' + 'cout << "La suma de los digitos es: " << sumDigit << endl;' + '\n' + '\t ' + 'return 0;' + '\n' + '}',
             '#include <iostream>' + '\n' + 'using namespace std;' + '\n' + 'int main() {' + '\n' + '\t ' + 'int x = 10;' + '\n' + '\t ' + 'if (x > 5) {' + '\n' + '\t' + '\t ' + 'cout << "El número es mayor que 5" << endl;' + '\n' + '\t ' + '}' + '\n' + '\t ' + 'return 0;' + '\n' + '}',
-            '#include <iostream>' + '\n' + 'using namespace std;' + '\n' + 'int main() {' + '\n' + '\t ' + 'int day = 4;' + '\n' + '\t ' + 'switch (day) {' + '\n' + '\t' + '\t ' + 'case 1:' + '\n' + '\t' + '\t' + '\t ' + 'cout << "Lunes" << endl;' + '\n' + '\t' + '\t' + '\t ' + 'break;' + '\n' + '\t' + '\t ' + 'case 2:' + '\n' + '\t' + '\t' + '\t ' + 'cout << "Martes" << endl;' + '\n' + '\t' + '\t' + '\t ' + 'break;' + '\n' + '\t' + '\t ' + 'case 3:' + '\n' + '\t' + '\t' + '\t ' + 'cout << "Miércoles" << endl;' + '\n' + '\t' + '\t' + '\t ' + 'break;' + '\n' + '\t' + '\t ' + 'case 4:' + '\n' + '\t' + '\t' + '\t ' + 'cout << "Jueves" << endl;' + '\n' + '\t' + '\t' + '\t ' + 'break;' + '\n' + '\t' + '\t ' + 'case 5:' + '\n' + '\t' + '\t' + '\t ' + 'cout << "Viernes" << endl;' + '\n' + '\t' + '\t' + '\t ' + 'break;' + '\n' + '\t' + '\t ' + 'default :' + '\n' + '\t' + '\t' + '\t ' + 'cout << "Día inválido" << endl;' + '\n' + '\t' + '\t' + '\t ' + 'break;' + '\n' + '\t ' + '}' + '\n' + '\t ' + 'return 0;' + '\n' + '}',
+            '//Autor: Oscar Alejandro' + '\n' + '//email: santamariaoscar@gmail.com' + '\n' + '//Fecha de elaboracion: 11/01/2020' + '\n' + '//Fecha de modificacion: 13/10/2020' + '\n' + '//Descripcion: Programa que calcula el area de un triangulo' + '#include <iostream>' + '\n' + 'using namespace std;' + '\n' + 'int main() {' + '\n' + '\t ' + 'int day = 4;' + '\n' + '\t ' + 'switch (day) {' + '\n' + '\t' + '\t ' + 'case 1:' + '\n' + '\t' + '\t' + '\t ' + 'cout << "Lunes" << endl;' + '\n' + '\t' + '\t' + '\t ' + 'break;' + '\n' + '\t' + '\t ' + 'case 2:' + '\n' + '\t' + '\t' + '\t ' + 'cout << "Martes" << endl;' + '\n' + '\t' + '\t' + '\t ' + 'break;' + '\n' + '\t' + '\t ' + 'case 3:' + '\n' + '\t' + '\t' + '\t ' + 'cout << "Miércoles" << endl;' + '\n' + '\t' + '\t' + '\t ' + 'break;' + '\n' + '\t' + '\t ' + 'case 4:' + '\n' + '\t' + '\t' + '\t ' + 'cout << "Jueves" << endl;' + '\n' + '\t' + '\t' + '\t ' + 'break;' + '\n' + '\t' + '\t ' + 'case 5:' + '\n' + '\t' + '\t' + '\t ' + 'cout << "Viernes" << endl;' + '\n' + '\t' + '\t' + '\t ' + 'break;' + '\n' + '\t' + '\t ' + 'default :' + '\n' + '\t' + '\t' + '\t ' + 'cout << "Día inválido" << endl;' + '\n' + '\t' + '\t' + '\t ' + 'break;' + '\n' + '\t ' + '}' + '\n' + '\t ' + 'return 0;' + '\n' + '}',
             '//Autor: Jose Fuentes' + '\n' + '//email: josefuentes@gmail' + '\n' + '//Fecha de elaboracion: 12/10/2020' + '\n' + '//Fecha de modificacion: 13/10/2020' + '\n' + '//Descripcion: Programa que calcula el area de un triangulo'
         ];
 
@@ -310,3 +315,60 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 });
+/* 
+document.addEventListener("DOMContentLoaded", function () {
+    const entrada = document.querySelector(".entrada_input");
+    const salida = document.querySelector(".salida_output table");
+    const sintacticoBtn = document.querySelector(".buttons_sint");
+
+    sintacticoBtn.addEventListener("click", function () {
+        console.log("click");
+
+        const input = document.querySelector(".entrada_input").value;
+        const lines = input.split("\n");
+
+        const tokens = [];
+        const lexemas = [];
+
+        lines.forEach(line => {
+            const tokenLexema = line.split(":");
+            const token = tokenLexema[0].trim().replace("//", ""); 
+            let lexema = tokenLexema[1] ? tokenLexema[1].trim() : '';
+
+            // Validar lexemas
+            switch (token) {
+                case 'Autor':
+                    lexema = /^[a-zA-Z\s]+$/.test(lexema) ? lexema : 'error'; 
+                    break;
+                case 'email':
+                    lexema = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(lexema) ? lexema : 'error'; 
+                    break;
+                case 'Fecha de elaboracion':
+                case 'Fecha de modificacion':
+                    lexema = /^([0-9]{1,2}\/[0-9]{1,2}\/([0-9]{2}|[0-9]{4}))$/.test(lexema) ? lexema : 'error';
+                    break;
+            }
+
+            tokens.push(token);
+            lexemas.push(lexema);
+        });
+
+        console.log("Tokens:", tokens);
+        console.log("Lexemas:", lexemas);
+
+        let tableHTML = '<tr><th>Token</th><th>Lexema</th></tr>';
+
+        for (let i = 0; i < tokens.length; i++) {
+            tableHTML += `<tr><td>${tokens[i]}</td><td>${lexemas[i]}</td></tr>`;
+        }
+
+        salida.innerHTML = tableHTML;
+        
+        const starIcon = document.getElementById("star-icon");
+            starIcon.classList.add("rotate-once");
+            setTimeout(() => {
+                starIcon.classList.remove("rotate-once");
+            }, 1000);
+    }, false);
+});
+ */

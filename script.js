@@ -45,14 +45,20 @@
         return output;
     }
 
-
-
-
+    const lexemasList = []
+    const tiopoList = []
+    
     tokenBtn.addEventListener("click", function () {
         
-        tbody.innerHTML = "";
+        tbody.innerHTML = ""; 
+        let separado = entrada.value.split("\n");
+        separado = separado.filter(function (line) {
+            return !line.startsWith("//");
+        });
+        // volverlo a unir
+        separado = separado.join("\n");
         
-        let input = entrada.value.replace(/[\n\t]/g, " ");
+        let input = separado.replace(/[\n\t]/g, " ");
         // borrar espacios en blanco
         input = input.replace(/\s+/g, " ");
         input = separarNumerosYCadena(input);
@@ -270,7 +276,10 @@
                 return '' + p1.replace(/~/g, " ") + '';
             });
 
-
+            lexemasList.push(lexema)
+            tiopoList.push(tipo)
+            
+            
             const tr = document.createElement("tr");
             const tipoTd = document.createElement("td");
             tipoTd.innerText = tipo;
@@ -279,8 +288,12 @@
             tr.appendChild(tipoTd);
             tr.appendChild(lexemaTd);
             tbody.appendChild(tr);
-        }
 
+        }
+        
+        console.log(lexemasList)
+        console.log(tiopoList)
+        
         salida.appendChild(tbody);
 
         const starIcon = document.getElementById("star-icon");
@@ -302,11 +315,11 @@
     function generarEjemplo() {
         const ejemplos = [
             "Ident1 = 23;" + "\n" + "Ident2 = 2;" + "\n" + "Ident1 + Ident2;" + "\n" + "$$",
-            '#include <iostream>' + '\n'+ 'using namespace std;' + '\n' + 'int main() {' + '\n' + '\t ' + 'for (int i = 0; i < 5; i++) {' + '\n' + '\t' + '\t ' + 'cout << "Iteración " << i + 1 << endl;' + '\n' + '\t ' + '}'+ '\n' + '\t ' + 'return 0;' + '\n' + '}',
-            '#include <iostream>' + '\n' + 'using namespace std;' + '\n' + 'int main() {' + '\n' + '\t ' + 'int extNum, sumDigit = 0, numEntero;' + '\n' + '\t ' + 'cout << "Ingrese un numero entero:";' + '\n' + '\t ' + 'cin >> numEntero;' + '\n' + '\t ' + 'while (numEntero != 0) {' + '\n' + '\t' + '\t ' + 'extNum = numEntero % 10;' + '\n' + '\t \t ' + 'numEntero /= 10;' + '\n' + '\t' + '\t ' + 'sumDigit += extNum;' + '\n' + '\t ' + '}' + '\n' + '\t ' + 'cout << "La suma de los digitos es: " << sumDigit << endl;' + '\n' + '\t ' + 'return 0;' + '\n' + '}',
-            '#include <iostream>' + '\n' + 'using namespace std;' + '\n' + 'int main() {' + '\n' + '\t ' + 'int x = 10;' + '\n' + '\t ' + 'if (x > 5) {' + '\n' + '\t' + '\t ' + 'cout << "El número es mayor que 5" << endl;' + '\n' + '\t ' + '}' + '\n' + '\t ' + 'return 0;' + '\n' + '}',
+            '//Autor: Luis Miguel' + '\n' + '//email: elbuki@gmail' + '\n' + '//Fecha de elaboracion: 12/10/2020' + '\n' + '//Fecha de modificacion: 13/10/2020' + '\n' + '//Descripcion: Auxiliom, no sale'+ '\n'+ '#include <iostream>' + '\n'+ 'using namespace std;' + '\n' + 'int main() {' + '\n' + '\t ' + 'for (int i = 0; i < 5; i++) {' + '\n' + '\t' + '\t ' + 'cout << "Iteración " << i + 1 << endl;' + '\n' + '\t ' + '}'+ '\n' + '\t ' + 'return 0;' + '\n' + '}',
+            '//Autor: Jose Rojas' + '\n' + '//email: losmaicols@gmail' + '\n' + '//Fecha de elaboracion: 10/01/2021' + '\n' + '//Fecha de modificacion: 05/05/2023' + '\n' + '//Descripcion: Ya pasenos profa'+ '\n'+ '#include <iostream>' + '\n' + 'using namespace std;' + '\n' + 'int main() {' + '\n' + '\t ' + 'int extNum, sumDigit = 0, numEntero;' + '\n' + '\t ' + 'cout << "Ingrese un numero entero:";' + '\n' + '\t ' + 'cin >> numEntero;' + '\n' + '\t ' + 'while (numEntero != 0) {' + '\n' + '\t' + '\t ' + 'extNum = numEntero % 10;' + '\n' + '\t \t ' + 'numEntero /= 10;' + '\n' + '\t' + '\t ' + 'sumDigit += extNum;' + '\n' + '\t ' + '}' + '\n' + '\t ' + 'cout << "La suma de los digitos es: " << sumDigit << endl;' + '\n' + '\t ' + 'return 0;' + '\n' + '}',
+            '//Autor: Jose Fuentes' + '\n' + '//email: josefuentes@gmail' + '\n' + '//Fecha de elaboracion: 12/10/2020' + '\n' + '//Fecha de modificacion: 13/10/2020' + '\n' + '//Descripcion: Programa 2'+ '\n'+ '#include <iostream>' + '\n' + 'using namespace std;' + '\n' + 'int main() {' + '\n' + '\t ' + 'int x = 10;' + '\n' + '\t ' + 'if (x > 5) {' + '\n' + '\t' + '\t ' + 'cout << "El número es mayor que 5" << endl;' + '\n' + '\t ' + '}' + '\n' + '\t ' + 'return 0;' + '\n' + '}',
             '//Autor: Oscar Alejandro' + '\n' + '//email: santamariaoscar@gmail.com' + '\n' + '//Fecha de elaboracion: 11/01/2020' + '\n' + '//Fecha de modificacion: 13/10/2020' + '\n' + '//Descripcion: Programa que calcula el area de un triangulo' + '#include <iostream>' + '\n' + 'using namespace std;' + '\n' + 'int main() {' + '\n' + '\t ' + 'int day = 4;' + '\n' + '\t ' + 'switch (day) {' + '\n' + '\t' + '\t ' + 'case 1:' + '\n' + '\t' + '\t' + '\t ' + 'cout << "Lunes" << endl;' + '\n' + '\t' + '\t' + '\t ' + 'break;' + '\n' + '\t' + '\t ' + 'case 2:' + '\n' + '\t' + '\t' + '\t ' + 'cout << "Martes" << endl;' + '\n' + '\t' + '\t' + '\t ' + 'break;' + '\n' + '\t' + '\t ' + 'case 3:' + '\n' + '\t' + '\t' + '\t ' + 'cout << "Miércoles" << endl;' + '\n' + '\t' + '\t' + '\t ' + 'break;' + '\n' + '\t' + '\t ' + 'case 4:' + '\n' + '\t' + '\t' + '\t ' + 'cout << "Jueves" << endl;' + '\n' + '\t' + '\t' + '\t ' + 'break;' + '\n' + '\t' + '\t ' + 'case 5:' + '\n' + '\t' + '\t' + '\t ' + 'cout << "Viernes" << endl;' + '\n' + '\t' + '\t' + '\t ' + 'break;' + '\n' + '\t' + '\t ' + 'default :' + '\n' + '\t' + '\t' + '\t ' + 'cout << "Día inválido" << endl;' + '\n' + '\t' + '\t' + '\t ' + 'break;' + '\n' + '\t ' + '}' + '\n' + '\t ' + 'return 0;' + '\n' + '}',
-            '//Autor: Jose Fuentes' + '\n' + '//email: josefuentes@gmail' + '\n' + '//Fecha de elaboracion: 12/10/2020' + '\n' + '//Fecha de modificacion: 13/10/2020' + '\n' + '//Descripcion: Programa que calcula el area de un triangulo'
+            
         ];
 
         const ejemploAleatorio = ejemplos[Math.floor(Math.random() * ejemplos.length)];

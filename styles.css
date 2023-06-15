@@ -176,6 +176,45 @@ i:active {
     color: white;
 }
 
+.documentator{
+    width: 80vw;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 1.1vw;
+    background-color: var(--color-DairyCream);
+    padding: 2vw 0;
+}
+.documentator_title{
+    color: #000;
+}
+
+.buttons_back{
+    width: 100%;
+    height: 130%;
+}
+
+.documentator_output{
+    width: 80%;
+    height: 80%;
+    margin: 5% 0;
+    overflow: auto;
+    background-color: #f2f2f2;
+    border-radius: 2vw;
+    padding: 1vw;
+}
+
+.documentator_output_text{
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    overflow: scroll;
+}
+.off{
+    display: none;
+}
+
 #star-icon {
     transition: transform 0.5s ease-in-out;
 }

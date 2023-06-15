@@ -1,21 +1,17 @@
-/* const PDFDocument = require('pdfkit');
-const fs = require('fs');
+document.addEventListener('DOMContentLoaded', function() {
+  var backButton = document.querySelector('.buttons_back');
+  var starIcon = document.getElementById('star-icon');
+  const container = document.querySelector('.container');
+  const documentator = document.querySelector('.documentator');
 
-// Función para generar el PDF
-function generatePDF() {
-  // Crear un nuevo documento PDF
-  const doc = new PDFDocument();
+  backButton.addEventListener('click', function() {
+    container.classList.remove('off');
+    documentator.classList.add('off');
+  });
 
-  // Agregar contenido al documento
-  doc.text('¡Hola, este es un PDF generado con pdfkit!');
+  starIcon.addEventListener('click', function() {
+    container.classList.add('off');
+    documentator.classList.remove('off');
+  });
+});
 
-  // Guardar el documento como un archivo PDF
-  doc.pipe(fs.createWriteStream('output.pdf'));
-  doc.end();
-
-  console.log('PDF generado correctamente.');
-}
-
-// Llamar a la función para generar el PDF
-generatePDF();
- */
